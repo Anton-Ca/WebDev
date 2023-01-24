@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block base %}
+{% load static %}
+
+<body>
+
+<div style="text-align: center;">
+    <h1> WOHO!!! <h1>
+    <h2> YOU FOUND THE EASTER EGG! <h2>
+
+    <h2> As a reward please accept this image of a happy potatoe! <h2>
+    <img src={% static "images/potatoe.jpeg"%} alt="Reward image">
+</div>
+
+<style>
+    body {
+        margin-bottom: 50px;
+        background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    }
+    @media screen and (max-width: 980px) {
+        body {
+            margin-bottom: 570px;
+        }
+    }
+
+</style>
+
+</body>
+
+{% endblock %}

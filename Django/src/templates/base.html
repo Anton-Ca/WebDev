@@ -1,0 +1,54 @@
+<!doctype html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Ströbeck </title/>
+        {% load static %}
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="{% static 'css/dark_mode.css' %}" id="dark-mode-styles">
+        <link rel="stylesheet" href="{% static 'css/nav.css' %}" id="nav-styles">
+        <link rel="stylesheet" href="{% static 'css/burger_menu.css' %}" id="burger-menu-styles">
+        <!--
+        # Hmm this doesn't work
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}" id="burger-icon-styles">
+        -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" id="burger-icon-styles">
+        <LINK REL="STYLESHEET" HREF="latex/t.css">
+
+    </head>
+    <body>
+
+        {% include 'navbar.html' %}
+        <img src={% static "images/dark-mode-button.png"%} alt="Dark mode toggle button" id="dark-mode-button" width="50" height="60">
+
+        {% block base %}
+            replace me
+        {% endblock %}
+
+        <style>
+            body {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        </style>
+
+        <script src="{% static 'js/dark_mode.js' %}"></script>
+        <script src="{% static 'js/burger_menu.js' %}"></script>
+
+        <!-- Takes care of issues where elements have not been fully loaded -->
+        <script>
+            // Check if the page has been loaded before
+            if (!document.cookie.includes("pageLoaded=true")) {
+                // Set a cookie to indicate that the page has been loaded
+                document.cookie = "pageLoaded=true";
+
+                // Detect when the page has finished loading
+                window.addEventListener("load", function() {
+                    // Refresh the page
+                    location.reload();
+                });
+            }
+        </script>
+
+    </body>
+<html>

@@ -1,0 +1,41 @@
+@import "colors.css";
+
+body {
+    background-color: var(--dark);
+    color: white;
+}
+/* Set the background color to black and the text color to white */
+
+/* Set the background color of input fields to dark gray */
+input, textarea {
+    background-color: var(--light);
+}
+
+/* Set the background color of buttons to dark gray and the text color to white */
+button, .btn {
+    background-color: var(--light);
+    color: white;
+}
+
+/* Set the border color of elements to light gray */
+input, textarea, button, .btn, a {
+    border-color: var(--idle);
+}
+
+/* Set the background color of tables to dark gray and the text color to white */
+table {
+    background-color: var(--light);
+    color: white;
+}
+
+/* Set the background color of table rows to light gray and the text color to black */
+tr {
+    background-color: var(--idle);
+    color: black;
+}
+
+/* Set the background color of selected table rows to light blue and the text color to white */
+tr.selected {
+    background-color: #0077c9;
+    color: white;
+}

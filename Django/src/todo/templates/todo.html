@@ -1,0 +1,46 @@
+<!doctype html>
+{% extends "base.html" %}
+
+{% block base %}
+{% load static %}
+
+<body>
+
+<ul>
+    <h2 class="rainbow"> TODO: </h2>
+    <li> Lägg till kod-project </li>
+    <li> Dubbelklicka på Nowhere för att hitta easteregg. </li>
+    <li> Lägg till video som autospelas med en techy miljö i bakgrunden där en modellerad avatar av Anton sitter vid en dator och kodar. Videon loopas och är som en välkomstskärm.
+        <br> &emsp;- blender</br></li>
+    <li> Lägg till språkknapp som översätter sidan till engelska/svenska/tyska för att visa mina språkkunskaper. </li>
+    <li> Lägga till ex-jobb </li>
+    <li> Ändra font fråga Jess </li>
+    <li>  </li>
+</ul>
+
+<style>
+    body {
+        margin-bottom: 550px;
+    }
+    @media screen and (max-width: 980px) {
+        body {
+            margin-bottom: 570px;
+        }
+    }
+
+</style>
+
+<style>
+    .rainbow {
+        width: 6rem;
+        background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+
+
+
+</body>
+
+{% endblock %}
