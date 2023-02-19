@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block base %}
+{% load static %}
+
+<body>
+
+<div style="text-align: center;">
+    <br> </br>
+    <h1 style="font-size: 4em; background: violet; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HAPPY VALENTINES DAY!<h1>
+    <br> </br>
+</div>
+
+<div style="text-align: center; height: 20%;">
+    <img src={% static "images/valentines_card.png"%} style="width: 45%; height: auto;" alt="Reward image">
+</div>
+
+<style>
+    body {
+        margin-bottom: 50px;
+    }
+    @media screen and (max-width: 980px) {
+        body {
+            margin-bottom: 570px;
+        }
+    }
+
+</style>
+
+</body>
+
+{% endblock %}
