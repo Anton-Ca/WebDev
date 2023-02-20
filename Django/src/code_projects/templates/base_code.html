@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block base %}
+
+<div class="title-container">
+{% block code_title %} {% endblock %}
+</div>
+
+<div class="bg">
+    {% block base_bg %}{% endblock %}
+</div>
+
+<div class="input-container">
+{% block code_buttons %}{% endblock %}
+</div>
+
+<style>
+    .title-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: -30px;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 5vh 5vh;
+    }
+</style>
+
+
+{% endblock %}

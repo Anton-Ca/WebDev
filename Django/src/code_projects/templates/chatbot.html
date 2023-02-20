@@ -1,23 +1,104 @@
-{% extends "base.html" %}
+{% extends "base_code.html" %}
+{% include "base.html" %}
 
-{% block base %}
 
-<h1 style="text-align:center; font-size: 3em"> Chatbot </h1>
+{% block code_title %}
 
-<div class="bg">
+    <div class="title" style="text-align: center; margin-left: 43%;">
+        <h1 style="font-size: 3em;"> Chatbot </h1>
+    </div>
+
+    <!-- Change to icon -->
+    <div class="button-container">
+        <button class="github-button"> Github </button>
+    </div>
+
+{% endblock %}
+
+
+{% block base_bg %}
+
     <div style="text-align: center;">
         <h2 class="rainbow"> TBD! COMING SOON ... </h2>
     </div>
-<div>
 
-<style>
-    .rainbow {
-        background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 2.5em;
-    }
-</style>
+{% endblock %}
 
 
+{% block code_buttons %}
+
+    <div class="button-container">
+        <button class="show-button">Show Code</button>
+    </div>
+
+    <div class="text-container">
+        <input type="text" placeholder="Enter some text...">
+    </div>
+
+    <div class="button-container">
+        <button class="send-button">Send</button>
+    </div>
+
+    <script>
+        $(function() {
+            $('.github-button').click(function() {
+                // Code to move to navigate to github code
+            });
+
+            $('.show-button').click(function() {
+                // Code to move to show code in pop-up
+            });
+
+            $('.send-button').click(function() {
+                // Code to move to send text
+            });
+        });
+    </script>
+
+    <style>
+        @import "colors.css";
+
+        input, textarea, button {
+            background-color: var(--light);
+            color: white;
+            border-radius: 10px;
+        }
+
+        input {
+            border-radius: 5px;
+        }
+
+        body {
+            margin-top: 60px;
+        }
+
+        .button-container.button {
+            background-color: blue;
+        }
+
+        .github-button {
+            float: right;
+            margin-left: 34vw;
+        }
+
+        .show-button {
+            float: left;
+            margin-left: 3vh;
+            margin-right: 50vw;
+        }
+
+        input {
+            color: white;
+            width: 50vh;
+        }
+
+        .send-button {
+            margin-right: 12vh;
+            margin-left: 5vh;
+        }
+
+        .rainbow {
+            font-size: 2.5em;
+        }
+    </style>
 {% endblock %}
