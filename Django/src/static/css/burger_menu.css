@@ -1,5 +1,7 @@
+@import "colors.css";
+
 .dropdown {
-    display: flex;
+    display: inline-block;
     position: absolute;
     flex-direction: column;
     background: #1F1E1C;
@@ -9,7 +11,9 @@
     right: 0%;
     top: 70px;
     z-index: 1001;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 1px solid white;
+    white-space: nowrap;
 }
 
 .large-burger {
@@ -40,6 +44,7 @@
     left: -35px;
     z-index: 1001;
     border-radius: 10px;
+    border: 1px solid white;
 }
 
 /* Smartphone */

@@ -22,11 +22,13 @@ from contact.views import contact_view
 from jess.views import jess_view, jess_heart, jess_quiz
 from comingSoon.views import coming_soon_view
 from todo.views import todo_view
+from code_projects.views import chatbot_view
 
 urlpatterns = [
     path("", home_view, name='home'),
     path("home/", home_view, name='home'),
     path("contact/", contact_view, name='contact'),
+    path("chatbot/", chatbot_view, name='chatbot'),
     path("jess/", jess_view, name='jess'),
     path("a<3j/", jess_heart, name='anton<3jess'),
     path("A<3J/", jess_heart, name='anton<3jess'),

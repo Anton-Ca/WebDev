@@ -33,11 +33,10 @@ nav {
 nav div a {
     display: block;
     color: var(--idle);
-    width: 100px;
     height: 50px;
-    text-align: center;
     line-height: 50px;
     text-decoration: none;
+    margin: 0 30px;
 }
 
 a:hover {
