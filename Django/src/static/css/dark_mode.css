@@ -9,6 +9,7 @@ body {
 /* Set the background color of input fields to dark gray */
 input, textarea {
     background-color: var(--light);
+    color: white;
 }
 
 /* Set the background color of buttons to dark gray and the text color to white */

@@ -12,7 +12,7 @@
     font-size: 1em;
 
 }
-/* Smartphone */
+/* Smartphone this needs to be fixed */
 @media screen and (max-width: 980px) {
     .large-burger label {
         display: flex;
