@@ -23,7 +23,7 @@
 
 {% block base_bg %}
 
-    <div style="text-align: center;">
+    <div>
         <h2 class="rainbow"> TBD! COMING SOON ... </h2>
     </div>
 
@@ -32,33 +32,19 @@
 
 {% block code_buttons %}
 
+    {% csrf_token %}
+
     <div class="button-container">
         <button class="show-button">Show Code</button>
     </div>
 
     <div class="text-container">
-        <input type="text" placeholder="Enter some text...">
+        <input type="text" id="text-input" class="message-input" placeholder="Enter some text...">
     </div>
 
     <div class="button-container">
-        <button class="send-button">Send</button>
+        <button type="button" class="send-button" onclick="sendMessage()">Send</button>
     </div>
-
-    <script>
-        $(function() {
-            $('.github-button').click(function() {
-                // Code to move to navigate to github code
-            });
-
-            $('.show-button').click(function() {
-                // Code to move to show code in pop-up
-            });
-
-            $('.send-button').click(function() {
-                // Code to move to send text
-            });
-        });
-    </script>
 
     <style>
         @import "colors.css";
@@ -117,12 +103,51 @@
         }
     </style>
 
-    <script>
-        const githubButton = document.querySelector(".github-button");
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
+    <script>
+    function sendMessage() {
+        var message = document.getElementById('text-input').value;
+        var csrf_token = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('POST', '{% url 'chatbot' %}');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('X-CSRFToken', csrf_token);
+
+        // Log the message sent
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                console.log('Message sent:', message);
+            } else {
+                console.log('Error:', xhr.statusText);
+            }
+        };
+
+        xhr.send('message=' + encodeURIComponent(message));
+        document.querySelector('.message-input').value = ""; // Clears input field
+    }
+
+    // Make sure page has been loaded before allowing user to click button
+    document.addEventListener("DOMContentLoaded", function() {
+        var sendButton = document.querySelector('.send-button');
+        sendButton.addEventListener('click', sendMessage);
+
+            // Use enter to send message with input field
+            var messageInput = document.querySelector('.message-input');
+            messageInput.addEventListener('keydown', function(event) {
+                if (event.keyCode === 13) {
+                    sendMessage();
+                }
+        });
+
+        // Redirect to github when button is pressed
+        var githubButton = document.querySelector('.github-button');
         githubButton.addEventListener("click", function() {
             window.open("https://github.com/Anton-Ca/Projects/tree/master/Python/openai/chatbot", "_blank");
         });
-    </script>
+    });
+</script>
 
 {% endblock %}
